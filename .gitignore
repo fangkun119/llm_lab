@@ -1,6 +1,8 @@
 # Local directories not ready to publish
 ref
 backlog
+env_init.done
+data/file/本地知识库.pdf
 
 # IDE
 .idea/
