@@ -8,11 +8,10 @@ from dotenv import load_dotenv
 from lib.util.llm_utils import EmbeddingUtil
 from lib.util.llm_utils import ChatModelUtil
 from lib.util.vector_store_utils import VectorStoreUtil
-from lib.config.config import Config
+from lib.config.app_config import Config
 
 load_dotenv()
 
-## FastAPI是一个基于Python的Web框架，用于构建高性能、可扩展的API。它提供了一种简单、直观的方式来定义API端点，以及处理HTTP请求和响应。
 app = FastAPI(
     title="LangChain Server",
     version="1.0",
@@ -31,9 +30,7 @@ def getContext(file_path):
 
 print("init knowledge base")
 vectorstore_wrapper = VectorStoreUtil.create_default_vectorstore_wrapper()
-vectorstore_wrapper.init_from_dump(
-    embedding=EmbeddingUtil.getDefaultEmbeddingModel(),
-    base_dir=Config.vectorstore_dump_dir())
+vectorstore_wrapper.init_from_dump(base_dir=Config.vectorstore_dump_dir())
 
 # texts = getContext("data/file/本地知识库.pdf")
 # content_chunks = split_content_into_chunks(texts)

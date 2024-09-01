@@ -90,27 +90,25 @@ echo $OPENAI_API_KEY
 start rest server
 
 ~~~
+python3 api/knowledge_helper.py
 ~~~
 
+### 4. start web server (streamlit)
 
-
+load API keys into environment variables and activate venv
 
 ~~~bash
-
 source ~/.bash_profile
+source venv/bin/activate
+# check
+echo $OPENAI_API_KEY
 ~~~
-
-
-
-01 实现基于 streamlit + OpenAI 的QA问答（文件格式：PDF）
 
 ```shell
 streamlit run knowledge_chatbot.py
 ```
 
-02 实现基于 gradio + OpenAI 的QA问答（文件格式：PDF）
-
-```shell
-gradio chatbot_gradio.py
-```
+<!-- not implemented yet -->
+<!-- 02 实现基于 gradio + OpenAI 的QA问答（文件格式：PDF）-->
+<!-- gradio chatbot_gradio.py -->
 

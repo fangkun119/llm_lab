@@ -10,6 +10,11 @@ import re
 import fitz # 一个用于处理PDF、XPS和其他文档格式的库
 from PIL import Image
 
+# TODO: 还没改好，这个文件运行不了
+# 使用另一个knowledge_chatbot.py
+# 安装好venv以及依赖之后执行命令
+# streamlit run knowledge_chatbot.py
+
 # 定义2个全局变量，目的是配置、修改 openai key
 enable_box = gr.Textbox.update(value=None,
                                placeholder="填写 OpenAI Key",
